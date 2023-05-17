@@ -1,0 +1,59 @@
+ame: Provision Terraform
+on:
+  pull_request:
+    branches: 
+      - "develop"
+      - "release/**"
+      - "master"
+      - "main"
+  push:
+    branches:
+      - "develop"
+      - "release/**"
+      - "master"
+      - "main"
+      - "feature/ci-pipelines"
+
+jobs:
+  provision_terraform
+    name: Provision 
+    runs-on: ubuntu-latest
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.1.9
+          terraform_wrapper: false
+
+      - name: Terraform Init
+        uses: hashicorp/terraform-github-actions/init@v0.4.0
+
+      - name: Terraform fmt
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
+        
+      - name: Terraform Validate
+        uses: hashicorp/terraform-github-actions/validate@v0.3.7
+      
+      # security scan yaml file
+      - name: Run Snyk to check Kubernetes manifest file for issues
+        uses: snyk/actions/iac@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          file: ../../infra/gcp_terraform/main.tf
+          args: --report --scan=resource-changes
+
+      #- name: Upload result to GitHub Code Scanning
+      #  uses: github/codeql-action/upload-sarif@v2 
+      #  with:
+      #    sarif_file: snyk.sarif
+
+      - name: Terraform Plan
+        id: plan
+        run: |
+          terraform plan -input=false -no-color -out tf.plan
+
+      - name: Terraform Apply
+        uses: hashicorp/terraform-github-actions/apply@v0.4.0
