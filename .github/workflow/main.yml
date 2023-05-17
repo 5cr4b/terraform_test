@@ -18,7 +18,7 @@ jobs:
   provision_terraform:
     name: Provision 
     runs-on: ubuntu-latest
-
+    steps:
       - name: Check Out Git Repository
         uses: actions/checkout@v2 
 
