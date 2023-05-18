@@ -13,7 +13,6 @@ on:
       - "master"
       - "main"
       - "feature/ci-pipelines"
-
 jobs:
   provision_terraform:
     name: Provision 
