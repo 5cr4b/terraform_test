@@ -3,7 +3,7 @@ resource "google_container_cluster" "primary" {
   location           = var.config.location
   initial_node_count = var.config.number_node
   node_config {
-    service_account = var.config
+    service_accoun t = var.config
     oauth_scopes = [
      
     ]
