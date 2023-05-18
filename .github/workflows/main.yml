@@ -32,8 +32,11 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT }}
           # this is the json key of the service account created on the project
-          service_account_key: ${{ secrets.GCP_CREDENTIALS }}  
-          export_default_credentials: true
+      - name: import creadentional
+        id: 'auth service account 2'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
       - name: Terraform Init
         uses: hashicorp/terraform-github-actions/init@v0.4.0
