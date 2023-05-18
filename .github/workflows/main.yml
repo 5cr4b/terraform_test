@@ -33,7 +33,7 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT }}
           # this is the json key of the service account created on the project
       - name: import creadentional
-        id: '111262330985724937115'
+        id: 111262330985724937115
         uses: 'google-github-actions/auth@v1'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
