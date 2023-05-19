@@ -65,7 +65,7 @@ jobs:
       - name: Terraform Plan
         id: plan
         run: |
-          terraform plan -input=false -no-color -out tf.plan
+          terraform plan
 
       #- name: Terraform Apply
       #  uses: hashicorp/terraform-github-actions/apply@v0.4.0
