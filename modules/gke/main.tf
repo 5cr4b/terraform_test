@@ -22,12 +22,12 @@ resource "google_container_cluster" "primary" {
   }
   resource_labels = "test"
   node_config {
-    service_account = var.config
+    service_account = var.config.service_account
     labels = {
       propose = "test"
     } 
     oauth_scopes = [
-     var.oauth_scopes
+     var.config.oauth_scopes
     ]
     tags = ["foo", "bar"]
   }
