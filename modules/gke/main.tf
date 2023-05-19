@@ -1,7 +1,7 @@
 resource "google_container_cluster" "primary" {
   name               = var.config.name
   location           = var.config.location
-  initial_node_count = var.config.number_node
+  initial_node_count = var.config.initial_node_count
   #resource_labels = "test"
 
   #pod_security_policy_config {

@@ -52,6 +52,7 @@ module "compute" {
         "scratch_disk"  = var.compute1.compute_scratch_disk
         "network"       = module.vpc.network_name
         "email"         = var.email
+        "my_lables"     = var.compute1.my_lables
         }
 }
 
@@ -70,7 +71,7 @@ module "storage" {
     source = "./modules/storage"
     #depends_on = [  ]
     config = {
-        "name" = var.gcr1.storage_name
+        "storage_name" = var.gcr1.storage_name
         "location" = var.location
     }
 }

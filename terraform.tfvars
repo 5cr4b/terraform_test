@@ -19,7 +19,7 @@ compute1 = {
     compute_image = "debian-cloud/debian-11"
     compute_scratch_disk      = "SCSI"
     storage_name = "nam-store.com"
-    labels = "test"
+    my_lables = "test"
 }
 
 vpc1 = {
