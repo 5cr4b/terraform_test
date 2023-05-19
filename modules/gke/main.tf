@@ -12,10 +12,10 @@ resource "google_container_cluster" "primary" {
       issue_client_certificate = false
     }
   }
-  private_cluster_config  {
-    enable_private_nodes = true
-    enable_private_endpoint = true
-  }
+  #private_cluster_config  {
+  #  enable_private_nodes = true
+  #  enable_private_endpoint = true
+  #}
   #workload_metadata_config {
   #  node_metadata = "GKE_METADATA"
   #}
