@@ -26,7 +26,7 @@ resource "google_container_cluster" "primary" {
   node_config {
     service_account = var.config.service_account
     labels = {
-      my_lables = var.config.gke1.my_lables
+      my_lables = var.config.my_lables
     } 
     oauth_scopes = [
      var.config.oauth_scopes
