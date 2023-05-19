@@ -7,9 +7,10 @@ location = "EU"
 service_account_name = "nambui906"
 
 
-gcrgcr1  = {
+gcr1  = {
     gcr_role = "roles/storage.objectViewer"
     gcr_member = "nambui906:nambui906@gmail.com"
+    storage_name = "nam-test"
 }
 
 compute1 = {
