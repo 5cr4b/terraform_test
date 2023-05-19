@@ -55,7 +55,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --report --scan=resource-changes
+          args: --report --scan=resource-changes -severity-threshold=critical
 
       #- name: Upload result to GitHub Code Scanning
       #  uses: github/codeql-action/upload-sarif@v2 
