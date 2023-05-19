@@ -7,7 +7,7 @@ location = "EU"
 service_account_name = "nambui906"
 
 
-gke1 = {
+gcrgcr1  = {
     gcr_role = "roles/storage.objectViewer"
     gcr_member = "nambui906:nambui906@gmail.com"
 }
@@ -18,6 +18,7 @@ compute1 = {
     compute_image = "debian-cloud/debian-11"
     compute_scratch_disk      = "SCSI"
     storage_name = "nam-store.com"
+    labels = "test"
 }
 
 vpc1 = {
@@ -25,7 +26,7 @@ vpc1 = {
     vpc_subnet_name = "vpc_subnet1"
 }
 
-gcr1 = {
+gke1 = {
     initial_node_count = 3
     gke_name = "nam_gke"
     oauth_scopes = "https://www.googleapis.com/auth/cloud-platform"
