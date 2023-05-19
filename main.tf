@@ -1,6 +1,6 @@
 module "vpc" {
     source = "./modules/network_vpc"
-    depends_on = [ ]
+    #depends_on = [ ]
     config = {
         "name"      = var.vpc1.vpc_name
         "project"   = var.project
@@ -25,7 +25,7 @@ module "vpc_subnet" {
 
 module "service_account"{
     source = "./modules/service_account"
-    depends_on = [  ]
+    #depends_on = [  ]
     config = {
         "account_id"    = var.account_id
         "display_name"  = var.service_account_name
@@ -57,7 +57,7 @@ module "compute" {
 
 module "gcr" {
     source = "./modules/registry_gcr"
-    depends_on = [  ]
+    #depends_on = [  ]
     config = {
         "project" = var.project
         "location" = var.location
@@ -68,7 +68,7 @@ module "gcr" {
 
 module "storage" {
     source = "./modules/storage"
-    depends_on = [  ]
+    #depends_on = [  ]
     config = {
         "name" = var.gcr1.storage_name
         "location" = var.location
@@ -77,7 +77,7 @@ module "storage" {
 
 module "gke" {
     source = "./modules/gke"
-    depends_on = [  ]
+    #depends_on = [  ]
     config = {
         "name" = var.gke1.gke_name
         "location" = var.location
