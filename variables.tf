@@ -41,7 +41,7 @@ variable "compute1" {
     compute_type = string
     compute_image = string 
     compute_scratch_disk = string 
-    labels = string
+    my_lables = string
   })
 }
 
