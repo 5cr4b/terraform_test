@@ -30,7 +30,8 @@ variable "vpc1" {
   type = object({
     vpc_name = string
     vpc_subnet_name = string
-  })
+  }
+  )
 }
 
 
