@@ -85,6 +85,6 @@ module "gke" {
         "initial_node_count" = var.gke1.initial_node_count
         "service_account" = var.email
         "oauth_scopes" = var.gke1.oauth_scopes
-        "my_lables" = var.compute1.labels
+        "my_lables" = var.gke1.my_lables
     }
 }

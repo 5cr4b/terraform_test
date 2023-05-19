@@ -1,7 +1,7 @@
 resource "google_container_cluster" "primary" {
   name               = var.config.name
   location           = var.config.location
-  initial_node_count = var.config.initial_node_count
+  initial_node_count = var.config.number_node
   #resource_labels = "test"
 
   #pod_security_policy_config {
@@ -26,7 +26,7 @@ resource "google_container_cluster" "primary" {
   node_config {
     service_account = var.config.service_account
     labels = {
-      propose = "test"
+      my_lables = var.config.gke1.my_lables
     } 
     oauth_scopes = [
      var.config.oauth_scopes

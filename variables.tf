@@ -58,5 +58,6 @@ variable "gke1" {
     gke_name = string 
     initial_node_count = number
     oauth_scopes = string 
+    my_lables = string
   })
 }

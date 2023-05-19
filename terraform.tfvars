@@ -31,6 +31,7 @@ gke1 = {
     initial_node_count = 3
     gke_name = "nam_gke"
     oauth_scopes = "https://www.googleapis.com/auth/cloud-platform"
+    my_lables = "test"
 }
 
 
