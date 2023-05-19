@@ -55,7 +55,6 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          file: ../../infra/gcp_terraform/main.tf
           args: --report --scan=resource-changes
 
       #- name: Upload result to GitHub Code Scanning

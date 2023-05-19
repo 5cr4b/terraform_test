@@ -11,9 +11,9 @@ module "vpc" {
 
 module "vpc_subnet" {
     source = "./modules/vpc_subnet"
-    depends_on = [
-        module.vpc
-    ]
+    #depends_on = [
+    #    module.vpc
+    #]
     config = {
         "name"      = var.vpc1.vpc_subnet_name
         "id"        = local.id
@@ -34,10 +34,10 @@ module "service_account"{
 
 module "compute" {
     source = "./modules/compute_engine"
-    depends_on = [ 
-        module.vpc,
-        module.service_account
-    ]
+    #depends_on = [ 
+    #    module.vpc,
+    #    module.service_account
+    #]
     config = {
         "name"          = var.compute1.compute_name
         "project"       = var.project
