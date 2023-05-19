@@ -5,19 +5,30 @@ email       = "nambui906@gmail.com"
 account_id  = "nambui906"
 location = "EU"
 service_account_name = "nambui906"
-gcr1 = ""
-gke1 = ""
-compute1 = ""
-vpc1 = ""
-gcr_role = "roles/storage.objectViewer"
-gcr_member = "nambui906:nambui906@gmail.com"
-vpc_name = "network1"
-vpc_subnet_name = "vpc_subnet1"
-compute_name = "compute1"
-compute_type =  "e2-medium"
-compute_image = "debian-cloud/debian-11"
-compute_scratch_disk      = "SCSI"
-storage_name = "nam-store.com"
-initial_node_count = 3
-gke_name = "nam_gke"
-oauth_scopes = "https://www.googleapis.com/auth/cloud-platform"
+
+
+gke1 = {
+    gcr_role = "roles/storage.objectViewer"
+    gcr_member = "nambui906:nambui906@gmail.com"
+}
+
+compute1 = {
+    compute_name = "compute1"
+    compute_type =  "e2-medium"
+    compute_image = "debian-cloud/debian-11"
+    compute_scratch_disk      = "SCSI"
+    storage_name = "nam-store.com"
+}
+
+vpc1 = {
+    vpc_name = "network1"
+    vpc_subnet_name = "vpc_subnet1"
+}
+
+gcr1 = {
+    initial_node_count = 3
+    gke_name = "nam_gke"
+    oauth_scopes = "https://www.googleapis.com/auth/cloud-platform"
+}
+
+
