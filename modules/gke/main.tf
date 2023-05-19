@@ -4,9 +4,9 @@ resource "google_container_cluster" "primary" {
   initial_node_count = var.config.number_node
   #resource_labels = "test"
 
-  pod_security_policy_config {
-    enabled = true
-  }
+  #pod_security_policy_config {
+  #  enabled = true
+  #}
   master_auth {
     client_certificate_config {
       issue_client_certificate = false

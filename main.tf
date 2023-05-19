@@ -47,24 +47,24 @@ module "compute" {
         "tags"          = [
             "purpose", "test"
         ]
-        "customer"      = local.customer
+        "customer"      = var.customer
         "image"         = var.compute1.compute_image
         "scratch_disk"  = var.compute1.compute_scratch_disk
         "network"       = module.vpc.network_name
-        "email"         = local.email
+        "email"         = var.email
         }
 }
 
-module "gcr" {
-    source = "./modules/registry_gcr"
+#module "gcr" {
+#    source = "./modules/registry_gcr"
     #depends_on = [  ]
-    config = {
-        "project" = var.project
-        "location" = var.location
-        "role" = var.gcr1.gcr_role
-        "member" = var.gcr1.gcr_member
-    }
-}
+#    config = {
+#        "project" = var.project
+#        "location" = var.location
+#        "role" = var.gcr1.gcr_role
+#        "member" = var.gcr1.gcr_member
+#    }
+#}
 
 module "storage" {
     source = "./modules/storage"
