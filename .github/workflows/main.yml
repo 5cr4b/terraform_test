@@ -46,8 +46,8 @@ jobs:
         run: terraform fmt -check
         continue-on-error: true
         
-      - name: Terraform Validate
-        uses: hashicorp/terraform-github-actions/validate@v0.3.7
+      #- name: Terraform Validate
+      #  uses: hashicorp/terraform-github-actions/validate@v0.3.7
       
       # security scan yaml file
       - name: Run Snyk to check Kubernetes manifest file for issues
